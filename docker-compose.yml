@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  bot:
+    build: 
+      context: .
+      dockerfile: etc/Dockerfile
+    restart: always
+    env_file: ./.env
+    networks:
+      - main_net
+
+networks:
+  main_net:
+    external: True
